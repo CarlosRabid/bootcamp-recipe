@@ -53,23 +53,24 @@ app.get('/recipes/:ingredient', function (req, response) {
     request(`https://recipes-goodness.herokuapp.com/recipes/${recipeIngredient}`, function (errror, res, data) {
         let processed = JSON.parse(data)
         let arrayRecipes = []
-        // let result = arrayRecipes.push(processed)
-        console.log(processed)
-        // result.forEach(pross => {
-        //     let player = {
-        //         name: pross.firstName+" "+pross.lastName,
-        //         // last: pross.lastName,
-        //         pic: `https://nba-players.herokuapp.com/players/${pross.lastName.toLowerCase()}/${pross.firstName.toLowerCase()}`
-        //     }
+        let result = processed.results
+        // console.log(processed)
+        result.forEach(pross => {
+            let food = {
+                title: pross.title,
+                ingredients: pross.ingredients,
+                pic: pross.thumbnail,
+                video: pross.href
+            }
 
-        // arrayPlayers.push(player)
+            arrayRecipes.push(food)
 
-    });
-    // console.log(arrayPlayers)
-    // response.send(arrayRecipes)
+        });
+        console.log(arrayRecipes)
+        response.send(arrayRecipes)
+    })
+
 })
-
-// })
 
 app.get('/sanity', function (request, response) {
     // console.log("someone into our servers")

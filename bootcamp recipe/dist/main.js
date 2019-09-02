@@ -7,8 +7,8 @@ let handlebarManager= function (idhtml, location, data) {
 }
 
 let showdata = function () {
-    let inputTeam = ($("#inputText").val())
-    $.get(`/teams/${inputTeam}`, function (data) {
+    let ingredient = ($("#inputText").val())
+    $.get(`/recipes/${ingredient}`, function (data) {
         // $(".container").empty()
         handlebarManager('#container','.container',data)
         // for (const play of playerlist) {

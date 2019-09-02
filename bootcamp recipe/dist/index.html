@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
 
-    <title>Roster Teams</title>
+    <title>Bootcamp Recipe</title>
 </head>
 
 <body>
-    <input type="text" id="inputText">
-    <button class="boton" onclick=showdata()>Go</button>
+    <input type="text" id="inputText" placeholder="Enter ingredient">
+    <button class="boton" onclick=showdata()>Find Recipe!</button>
     <div class="container"></div>
 
     <script id="container" type="text/x-handlebars-template">
         {{#each data}}
-        <li><img src="{{pic}}">{{name}}</li>
+        <div><img src="{{pic}}"><li>{{title}} {{ingredients}} {{video}}</li></div>
         {{/each}}
     </script>
 
