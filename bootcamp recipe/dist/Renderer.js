@@ -4,7 +4,6 @@ class Renderer {
 
     }
     handlebarManager (idhtml, location, data) {
-        debugger
         var source = $(idhtml).html();
         var template = Handlebars.compile(source);
         let compiled = template( {data} );

@@ -14,22 +14,31 @@
 //         handlebarManager('#container','.container',data)
 //         // for (const play of playerlist) {
 //         //     $(".container").append(`<div>${play.name}</div>`)
-            
+
 //         // }
-        
+
 //     })
 // }
 
 render = new Renderer()
 
 
-let showdata= function() {
+let showdata = function () {
     let ingredient = ($("#inputText").val())
-    debugger
 
     $.get(`/recipes/${ingredient}`, function (data) {
         // $(".container").empty()
-        render.handlebarManager('#container','.container',data)
+        render.handlebarManager('#container', '.container', data)
 
-})
+    })
 }
+
+
+
+$(".container").on("click", ".thumb", function () {
+    debugger
+    let ingItems = $(this).closest("div").find("li").text()
+    console.log(ingItems)
+
+}
+)
